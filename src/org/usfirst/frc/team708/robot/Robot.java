@@ -35,6 +35,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
  */
 public class Robot extends IterativeRobot {
 	
+	/*
 	WPI_TalonSRX motor1 = new WPI_TalonSRX(11);
 	WPI_TalonSRX motor2 = new WPI_TalonSRX(12);
 	WPI_TalonSRX motor3 = new WPI_TalonSRX(13);
@@ -47,7 +48,7 @@ public class Robot extends IterativeRobot {
 	        = new DifferentialDrive(m_left, m_right);
 	private Joystick m_stick = new Joystick(1);
 	private Timer m_timer = new Timer();
-	
+	*/
     Timer statsTimer;										// Timer used for Smart Dash statistics
     
     public static Drivetrain 		drivetrain;
@@ -103,7 +104,7 @@ public class Robot extends IterativeRobot {
 	 */
     	public void autonomousInit() {
     	
-    	turnDirection = prefs.getDouble("TurnDirection", 4.0);
+    //	turnDirection = prefs.getDouble("TurnDirection", 4.0);
     		
     	// schedule the autonomous command (example)   		
     	autonomousCommand = (Command)autonomousMode.getSelected();
@@ -144,7 +145,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         sendStatistics();
-        m_robotDrive.arcadeDrive(m_stick.getRawAxis(1), m_stick.getRawAxis(0));
+   //     m_robotDrive.arcadeDrive(m_stick.getRawAxis(1), m_stick.getRawAxis(0));
     }
     
     /**
